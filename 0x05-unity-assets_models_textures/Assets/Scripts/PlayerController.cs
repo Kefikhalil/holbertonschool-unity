@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     private bool _canDoubleJump = false;
 
+    public float threshold;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,5 +58,8 @@ public class PlayerController : MonoBehaviour
         direction.y = _directionY;
 
         _controller.Move(direction * _moveSpeed * Time.deltaTime);
+
+        if (transform.position.y < threshold)
+            transform.position = new Vector3(0, 1.25f, 0);
     }
 }
