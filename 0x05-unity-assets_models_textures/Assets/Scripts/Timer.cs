@@ -14,34 +14,51 @@ public class Timer : MonoBehaviour
 
     private int countMinutes;
 
+    private bool stop = false;
+
     void Start()
     {
-        
+
     }
-
-    // Update is called once per frame
-    void Update()
+    public void Stop()
     {
-        UpdateTimerUI();
+        this.stop = true;
+        this.timerText.color = Color.green;
+        this.timerText.fontSize = 60;
     }
-
-    public void UpdateTimerUI()
+    private void Update()
     {
-        countMilliSecond += Time.deltaTime * 100;
-        if (countSeconds < 10)
-            timerText.text = countMinutes + ":0" + (int)countSeconds + "." + (int)countMilliSecond;
-        else
-            timerText.text = countMinutes + ":" + (int)countSeconds + "." + (int)countMilliSecond;
+        if (!this.stop)
+            this.timerText.text = string.Format(
+                "{0}:{1:00.00}",
+                Mathf.RoundToInt(Time.time / 60),
+                Time.time % 60
+            );
 
-        if (countMilliSecond >= 60)
+        // Update is called once per frame
+        void Update()
         {
-            countSeconds++;
-            countMilliSecond = 0;
+            //UpdateTimerUI();
         }
-        else if (countSeconds >= 60)
+
+        /*public void UpdateTimerUI()
         {
-            countMinutes++;
-            countSeconds = 0;
-        }
+            countMilliSecond += Time.deltaTime * 100;
+            if (countSeconds < 10)
+                timerText.text = countMinutes + ":0" + (int)countSeconds + "." + (int)countMilliSecond;
+            else
+                timerText.text = countMinutes + ":" + (int)countSeconds + "." + (int)countMilliSecond;
+
+            if (countMilliSecond >= 60)
+            {
+                countSeconds++;
+                countMilliSecond = 0;
+            }
+            else if (countSeconds >= 60)
+            {
+                countMinutes++;
+                countSeconds = 0;
+            }
+        }*/
     }
 }
