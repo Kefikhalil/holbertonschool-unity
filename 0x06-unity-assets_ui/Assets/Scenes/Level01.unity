@@ -4445,13 +4445,19 @@ PrefabInstance:
     - target: {fileID: 5275011284463005424, guid: 32fe884170b475c4bb75bb1c46c16790,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -189.3
+      value: -165
       objectReference: {fileID: 0}
     - target: {fileID: 5275011284463005424, guid: 32fe884170b475c4bb75bb1c46c16790,
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 5275011284463005439, guid: 32fe884170b475c4bb75bb1c46c16790,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 422eb62689d8e9440aa8827698a24b7d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32fe884170b475c4bb75bb1c46c16790, type: 3}
 --- !u!1001 &6887385576101627192
