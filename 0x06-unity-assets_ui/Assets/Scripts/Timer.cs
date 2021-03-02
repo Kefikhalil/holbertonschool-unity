@@ -35,8 +35,12 @@ public class Timer : MonoBehaviour
                 Time.time % 60
             );
 
+        //public void Win()
+        {
+        }
+
         // Update is called once per frame
-        void Update()
+        //void Update()
         {
             //UpdateTimerUI();
         }

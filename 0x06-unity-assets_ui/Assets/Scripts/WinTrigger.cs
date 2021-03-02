@@ -8,6 +8,8 @@ public class WinTrigger : MonoBehaviour
 
     GameObject player;
 
+    [SerializeField] public Canvas winMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +25,6 @@ public class WinTrigger : MonoBehaviour
     {
         if (other.name.Equals("Player"))
             other.GetComponent<Timer>().Stop();
+        winMenu.gameObject.SetActive(true);
     }
 }
